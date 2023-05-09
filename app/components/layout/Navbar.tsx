@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 
+import Categories from './Categories';
 import Container from '../Container';
-import Logo from '../navbar/Logo';
 import Search from '../navbar/Search';
 import UserMenu from './UserMenu';
 
@@ -28,7 +28,7 @@ const Navbar = () => {
           >
             <Image
               onClick={() => router.push('/')}
-              className="hidden md:block cursor-pointer" 
+              className="hidden md:block cursor-pointer"
               src="/images/logo.png"
               height="100"
               width="100"
@@ -39,6 +39,7 @@ const Navbar = () => {
           </div>
         </Container>
       </div>
+      {isMainPage && <Categories />}
     </div>
   )
 }
